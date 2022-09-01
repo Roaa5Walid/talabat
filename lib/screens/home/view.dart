@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   get currentPage => null;
+  List<bool> numberTruthList = [true, true, true, true , true, true];
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,35 @@ class _HomeState extends State<Home> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+        Expanded(
+        flex: 2,
+        child:
+          Container(
+           width: double.infinity,
+            height: 100,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int i) {
+                return
+                  Row(
+                    children: [
+                      navrow("images/r1.jpg","مطاعم"),
+                      navrow("images/brk.jpg","الفطور"),
+                      navrow("images/da.jpg","دايت"),
+                      navrow("images/karaz.jpg","كرازات"),
+                      navrow("images/adw.jpg","ادوية"),
+                      navrow("images/r1.jpg","مطعم"),
+
+                    ],
+                  );
+              },
+            ),
+          ),
+        ),
+
+/*
           Expanded(
               flex: 2,
           child:Container(
@@ -52,25 +82,91 @@ class _HomeState extends State<Home> {
             ),
           ) ,
           ),
-
+*/
 Expanded(
     flex: 6,
-    child: Container(
-      //width: 500,height: 900,
-      child: ListView(
+    child:  ListView(
         scrollDirection: Axis.vertical,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+          Column(
             children: [
-              Column(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("المحلات الاكثر شيوعا",style: TextStyle(fontSize: 22,color: Colors.red),),
-      Container( width: 200 , height: 2,color: Colors.red,)
+                  Column(
+                    children: [
+                      Text("المحلات الاكثر شيوعا",style: TextStyle(fontSize: 22,color: Colors.red),),
+                      Container( width: 200 , height: 2,color: Colors.red,)
+                    ],
+                  ),
                 ],
               ),
+              Container(
+                height: 160,
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (BuildContext context, int i) {
+                    return
+                      Row(
+                        children: [
+                          cnavrow("images/r1.jpg","زرزور"),
+                          cnavrow("images/brk.jpg","عروس دمشق"),
+                          cnavrow("images/da.jpg","دايت"),
+                          cnavrow("images/karaz.jpg","كرازات"),
+                          cnavrow("images/adw.jpg","ادوية"),
+                          cnavrow("images/r1.jpg","مطعم"),
+
+                        ],
+                      );
+                  },
+                ),
+              ),
+              Container(
+                height: 30,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      child: Row(
+                        children: [
+                          Icon(Icons.home_outlined),
+                          rview("الكل",),
+                        ],
+                      ),
+                    ),
+                    rview("خصومات"),
+                    rview("يدعم المحفظة"),
+                    rview("حصري"),
+                    rview("توصيل مجاني"),
+                    rview("خصوماتجديد"),
+                  ],
+                ),
+              ) ,
+
+               ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 3,
+                  itemBuilder: (BuildContext context, int i) {
+                    return
+                      Column(
+                        children: [
+                          navcol("images/brkar.jpg","الحد الادنى للطلب:5,000د.ع","هايزن","منصور","ممتاز","سعر التوصيل:1.000د.ع","بروموكود"),
+                          navcol("images/kntak.jpg","الحد الادنى للطلب:5,000د.ع","تشياي هاوس وليز","منصور","جيد جدا","سعر التوصيل:1.500د.ع","حصري"),
+                          navcol("images/brkar.jpg","الحد الادنى للطلب:5,000د.ع","بركرز","منصور","ممتاز","سعر التوصيل:1.000د.ع","بروموكود"),
+                          navcol("images/r1.jpg","الحد الادنى للطلب:5,000د.ع","باستا","منصور","جيد","سعر التوصيل:1.500د.ع","بروموكود"),
+
+
+                        ],
+                      );
+                  },
+                ),
+
             ],
           ),
+
+          /*
           Container(
             height: 160,
             child: ListView(
@@ -85,41 +181,19 @@ Expanded(
               ],
             ),
           ),
-          Container(
-              height: 30,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    child: Row(
-                      children: [
-                        Icon(Icons.home_outlined),
-                        rview("الكل",),
-                      ],
-                    ),
-                  ),
-                  rview("خصومات"),
-                  rview("يدعم المحفظة"),
-                  rview("حصري"),
-                  rview("توصيل مجاني"),
-                  rview("خصوماتجديد"),
-                ],
-              ),
-            ) ,
+          */
 
 
-
+/*
           navcol("images/brkar.jpg","الحد الادنى للطلب:5,000د.ع","هايزن","منصور","ممتاز","سعر التوصيل:1.000د.ع","بروموكود"),
           navcol("images/kntak.jpg","الحد الادنى للطلب:5,000د.ع","تشياي هاوس وليز","منصور","جيد جدا","سعر التوصيل:1.500د.ع","حصري"),
           navcol("images/brkar.jpg","الحد الادنى للطلب:5,000د.ع","بركرز","منصور","ممتاز","سعر التوصيل:1.000د.ع","بروموكود"),
           navcol("images/r1.jpg","الحد الادنى للطلب:5,000د.ع","باستا","منصور","جيد","سعر التوصيل:1.500د.ع","بروموكود"),
-
+*/
         ],
-      ) ,
-    ) )
 
-
-
+    )
+      )
 
       ],
     
@@ -169,7 +243,7 @@ Expanded(
       padding: const EdgeInsets.all(2),
       child: Container(
         margin: EdgeInsetsDirectional.all(10),
-        height: 120,
+        height: 200,
         width: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
@@ -190,6 +264,7 @@ Expanded(
                 ),
               ),
             ),
+            SizedBox(height: 10,),
             Text(rname,style: TextStyle(fontSize: 16,color: Colors.black),)
           ],
         ),
@@ -202,7 +277,7 @@ Expanded(
       padding: const EdgeInsets.all(2),
       child: Container(
         margin: EdgeInsetsDirectional.all(10),
-        height: 100,
+        height: 150,
         width: 250,
         decoration: BoxDecoration(
         ),
@@ -237,7 +312,7 @@ Expanded(
       child: Container(
         margin: EdgeInsetsDirectional.all(5),
         height: 200,
-        width: 100,
+        width: 500,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
 
@@ -248,7 +323,6 @@ Expanded(
             Center(
               child:
                   Container(
-                    color:Colors.cyanAccent ,
                     child:
                     Stack(
                       children: [
