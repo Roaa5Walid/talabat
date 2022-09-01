@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../home/view.dart';
+import '../signin/view.dart';
 
 class Spla extends StatefulWidget {
   const Spla({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _SplaState extends State<Spla> {
   Future Delay() async{
     await Future.delayed(const Duration(seconds: 4));
     Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => Home()));
+        builder: (context) => Signin()));
   }
   @override
   void initState(){

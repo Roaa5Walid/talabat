@@ -68,6 +68,7 @@ flutter:
    - images/kntak.jpg
    - images/brkar.jpg
    - images/talabatey.png
+   - images/talabatt.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
