@@ -9,6 +9,23 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
+  bool chick = false;
+  TextField box = TextField(
+    textAlign: TextAlign.right,
+    cursorColor: Colors.red,
+    style: const TextStyle(color: Colors.black),
+    decoration: InputDecoration(
+      counterStyle: TextStyle(color: Colors.red.shade900,fontSize: 12,),
+      fillColor: Colors.grey.withOpacity(0.3), filled: true,
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20)
+      ),
+
+      hintText: "رمز المشاركة",
+
+
+    ),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,33 +85,49 @@ class _SigninState extends State<Signin> {
 
                     Padding(
                       padding: const EdgeInsets.all(20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(Icons.arrow_drop_down),
-                          Text("اذا كان لديك رمز مشاركةز اضغط هنا ",style: TextStyle(fontSize: 20,color: Colors.red),),
-                        ],
-                      ),
-                    ),
+                      child:GestureDetector(
+                        child:   Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Icon(Icons.arrow_drop_down),
+                            Text("اذا كان لديك رمز مشاركةز اضغط هنا ",style: TextStyle(fontSize: 20,color: Colors.red),),
+                          ],
+                        ),
 
-                Directionality(
-                  textDirection: TextDirection.rtl,
-                  child:  TextField(
-                    textAlign: TextAlign.right,
-                    cursorColor: Colors.red,
-                    style: const TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      counterStyle: TextStyle(color: Colors.red.shade900,fontSize: 12,),
-                      fillColor: Colors.grey.withOpacity(0.3), filled: true,
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
+                        onTap: () {
+                        setState(() {
+                          chick =! chick;
+                        });
+                        }
+
                       ),
 
-                      hintText: "رمز المشاركة",
-
-
                     ),
-                  ),),
+
+                Visibility(
+                  visible: chick,
+                  child: Directionality(
+                    textDirection: TextDirection.rtl,
+                    child:
+                    TextField(
+                      textAlign: TextAlign.right,
+                      cursorColor: Colors.red,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        counterStyle: TextStyle(color: Colors.red.shade900,fontSize: 12,),
+                        fillColor: Colors.grey.withOpacity(0.3), filled: true,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20)
+                        ),
+
+                        hintText: "رمز المشاركة",
+
+
+                      ),
+                    ),),
+                ),
+
+
                   SizedBox(height: 40,),
                 SizedBox(
                     width:MediaQuery.of(context).size.width,
