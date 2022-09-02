@@ -10,22 +10,6 @@ class Signin extends StatefulWidget {
 
 class _SigninState extends State<Signin> {
   bool chick = false;
-  TextField box = TextField(
-    textAlign: TextAlign.right,
-    cursorColor: Colors.red,
-    style: const TextStyle(color: Colors.black),
-    decoration: InputDecoration(
-      counterStyle: TextStyle(color: Colors.red.shade900,fontSize: 12,),
-      fillColor: Colors.grey.withOpacity(0.3), filled: true,
-      border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20)
-      ),
-
-      hintText: "رمز المشاركة",
-
-
-    ),
-  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
