@@ -1,0 +1,2 @@
+String name="";
+var phone="";
