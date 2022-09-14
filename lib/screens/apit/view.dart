@@ -26,10 +26,9 @@ class _ApitState extends State<Apit> {
      setState(() {
 
      });
-
    }
-print(litems);
-
+print(litems);//to print in my app
+   print(list1);//to print my databace in run
 
  }
  void initState(){
@@ -78,8 +77,8 @@ print(litems);
                  padding: const EdgeInsets.only(top: 8,bottom: 8),
                  child: Text(addres,style: TextStyle(fontSize: 20,color: Color(0xff00b692)),),
                ),
-               Text("Get up to 50% off on these",style: TextStyle(fontSize: 15,color: Colors.blueGrey),),
-               Text("selected restaurant",style: TextStyle(fontSize: 15,color: Colors.blueGrey),),
+               Text("Lorem Ipsum has been the industry's",style: TextStyle(fontSize: 15,color: Colors.blueGrey),),
+               Text("Lorem Ipsum has been",style: TextStyle(fontSize: 15,color: Colors.blueGrey),),
 
              ],
            ),
